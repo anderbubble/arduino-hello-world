@@ -76,31 +76,31 @@ void morse_char (char message_char)
 
 void morse_char_break ()
 {
-  delay(munge(LETTER_BREAK));
+  munged_delay(LETTER_BREAK);
 }
 
 
 void morse_word_break ()
 {
-  delay(munge(WORD_BREAK));
+  munged_delay(WORD_BREAK);
 }
 
 
 void dash ()
 {
   digitalWrite(LED, HIGH);
-  delay(munge(DASH));
+  munged_delay(DASH);
   digitalWrite(LED, LOW);
-  delay(munge(DOT));
+  munged_delay(DOT);
 }
 
 
 void dot ()
 {
   digitalWrite(LED, HIGH);
-  delay(munge(DOT));
+  munged_delay(DOT);
   digitalWrite(LED, LOW);
-  delay(munge(DOT));
+  munged_delay(DOT);
 }
 
 
@@ -111,3 +111,8 @@ int munge (int value)
   return new_value;
 }
 
+
+void munged_delay (int value)
+{
+  delay(munge(value));
+}
